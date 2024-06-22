@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project_2/base/navigation.dart';
+import 'package:sample_project_2/res/styles/app_styles.dart';
+import 'package:sample_project_2/screens/All_hotels_view.dart';
+import 'package:sample_project_2/screens/All_ticket_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demoooo'),
-        ),
-        body: const Center(
-          child: Text('Hello, Flutter!'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(canvasColor: AppColors.canvasColor),
+      home: const homeScreen(),
+      routes: {
+        "all_tickets":(context){
+          return const allTickets();
+        },
+        "all_hotels":(context){
+          return const allHotels();
+        }
+      },
     );
   }
 }
