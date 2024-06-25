@@ -3,16 +3,17 @@ import 'package:sample_project_2/res/styles/app_styles.dart';
 
 class DoubleText extends StatelessWidget {
   const DoubleText(
-      {super.key, required this.FirstStr, required this.SecondStr, required this.paddingTop, required this.screen});
+      {super.key, required this.FirstStr, required this.SecondStr, required this.paddingTop, required this.screen,required this.paddingside});
   final String FirstStr;
   final String SecondStr;
   final double paddingTop;
   final String screen;
+  final double paddingside;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:  EdgeInsets.only(top: paddingTop, left: 20, right: 20, bottom: 20),
+      padding:  EdgeInsets.only(top: paddingTop, left: paddingside, right: paddingside, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

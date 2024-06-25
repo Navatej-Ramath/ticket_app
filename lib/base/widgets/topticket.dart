@@ -14,7 +14,9 @@ class ticketPart extends StatelessWidget {
       required this.bottomrightName,
       required this.bottomleftName,
       required this.flag,
-      required this.bottomcentreName});
+      required this.bottomcentreName,
+      required this.screen,
+      required this.rad});
   final Color ticketcolor;
   final String toprightName;
   final String toplefttName;
@@ -22,6 +24,8 @@ class ticketPart extends StatelessWidget {
   final String bottomleftName;
   final String bottomcentreName;
   final int flag;
+  final int screen;
+  final double rad;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +40,9 @@ class ticketPart extends StatelessWidget {
                 topLeft: Radius.circular(20), // Set top left radius
                 topRight: Radius.circular(20), // Set top right radius
               )
-            : const BorderRadius.only(
-                bottomLeft: Radius.circular(20), // Set top left radius
-                bottomRight: Radius.circular(20), // Set top right radius
+            :  BorderRadius.only(
+                bottomLeft: Radius.circular(rad), // Set top left radius
+                bottomRight: Radius.circular(rad), // Set top right radius
               ),
       ),
       padding: const EdgeInsets.all(10),
@@ -52,32 +56,32 @@ class ticketPart extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: screen==1?Colors.white:Colors.black),
               ),
               Text(
                 bottomleftName,
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: screen==1?Colors.white:Colors.grey.shade500),
               )
             ],
           ),
           Column(
             children: [
               flag == 1
-                  ? const ticketPlane()
-                  : const Text('08:00AM',
+                  ?  ticketPlane(screen: screen,)
+                  :  Text('08:00AM',
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white)),
+                          color: screen==1?Colors.white:Colors.black)),
                Text(
                 bottomcentreName,
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: screen==1?Colors.white:Colors.grey.shade500),
               )
             ],
           ),
@@ -88,14 +92,14 @@ class ticketPart extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: screen==1?Colors.white:Colors.black),
               ),
               Text(
                 bottomrightName,
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                    color: screen==1?Colors.white:Colors.grey.shade500),
               )
             ],
           ),

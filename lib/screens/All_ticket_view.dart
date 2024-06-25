@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../base/widgets/ticketView.dart';
 
@@ -24,7 +22,10 @@ class allTickets extends StatelessWidget {
                   time: '8H 30M',
                   date: '1 May',
                   departureTime: '8:00AM',
-                  number: '23'),
+                  number: '23',
+                  flag: 1,
+                screen: 1,
+              rad: 20,),
               ticketView(
                 fromCode: 'IND',
                 from: 'India',
@@ -34,6 +35,9 @@ class allTickets extends StatelessWidget {
                 date: '2 May',
                 departureTime: '10:00AM',
                 number: '45',
+                flag: 1,
+                screen: 1,
+                  rad: 20
               ),
               ticketView(
                 fromCode: 'PAR',
@@ -44,6 +48,9 @@ class allTickets extends StatelessWidget {
                 date: '3 May',
                 departureTime: '12:00PM',
                 number: '78',
+                flag: 1,
+                screen: 1,
+                  rad: 20
               ),
               ticketView(
                 fromCode: 'NYC',
@@ -54,6 +61,9 @@ class allTickets extends StatelessWidget {
                 date: '4 May',
                 departureTime: '3:00PM',
                 number: '90',
+                flag: 1,
+                screen: 1,
+                  rad: 20
               )
             ],
           ),
